@@ -1,0 +1,64 @@
+<body class="bg-white dark:bg-dark text-dark dark:text-white w-auto">
+  <header>
+      <nav class="bg-white dark:bg-dark text-dark dark:text-white">
+          <div class="flex justify-between items-center">
+              <p class="menu-title">JULIEN THÊME</p>
+              <div class="menu phone:hidden tablet:inline">
+                  <ol>
+                      <li class="hover:text-white"><a href="home" class="is-active">Home</a></li>
+                      <li class="hover:text-white"><a href="work">Work</a></li>
+                      <li class="hover:text-white"><a href="contact">Contact</a></li>
+                      <div class="mt-2">
+                          <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
+                              <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-black border-4 appearance-none cursor-pointer"/>
+                              <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-dark cursor-pointer"></label>
+                          </div>
+                      </div>
+                  </ol>
+              </div>
+              <button class="hamburger phone:inline tablet:hidden">
+                  <span class="bg-dark dark:bg-white"></span>
+                  <span class="bg-dark dark:bg-white"></span>
+                  <span class="bg-dark dark:bg-white"></span>  
+              </button>   
+          </div>
+      </nav>
+  </header>
+  <main>
+      <div class="maindiv mt-40 phone:text-center">
+          <div class="flex phone:justify-around phone:flex-col-reverse tablet:flex-row phone:items-center">
+              <div class="tablet:ml-24 phone:mt-14">
+                  <img src="../assets/img/profilPicture.png" alt="profilPicture.png" class="max-w-96 max-h-96">
+              </div>
+              <div class="phone:text-h2 phoneL:text-h1 tablet:mr-24 phone:mx-2 phoneL:mx-0 font-bold">
+                  <p class="mt-10">Hi, welcome to my portfolio.</p>
+                  <p class="mt-10">I'm Julien a French developer.</p>
+                  <p class="mt-10">I'm {{ age }} years-old.</p>
+              </div>
+          </div>
+          <div class="flex phone:justify-around phone:flex-col tablet:flex-row mt-24 phone:items-center">
+              <div class="phone:text-h2 phoneL:text-h1 tablet:ml-24 font-bold max-w-[50rem] phone:mx-2 phoneL:mx-0">
+                  <p class="mt-10">I live in Clermont-Ferrand in France.</p>
+                  <p class="mt-10">I am currently in my third year of a computer science degree at UCA.</p>
+              </div>
+              <div class="phoneL:h-124 phoneL:w-124 phone:w-96 phone:h-96 tablet:mr-24">
+                  
+              </div>
+          </div>
+      </div>
+      <div class="burger-menu">
+          <ol class="text-h1 ml-3">
+              <li class="hover:text-white"><a router-link="home" class="is-active">Home</a></li>
+              <li class="hover:text-white"><a router-link="work">Work</a></li>
+              <!-- <li><a href="#">About</a></li> -->
+              <li class="hover:text-white"><a router-link="contact">Contact</a></li>
+              <div class="mt-2">
+                  <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                      <input type="checkbox" name="toggle2" id="toggle2" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-black border-4 appearance-none cursor-pointer"/>
+                      <label for="toggle2" class="toggle-label block overflow-hidden h-6 rounded-full bg-dark cursor-pointer"></label>
+                  </div>
+              </div>
+          </ol>
+      </div>
+  </main>
+</body>
