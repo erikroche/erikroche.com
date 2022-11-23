@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from './app.service'; 
+import { NavbarService } from '../services/navbar.service';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,13 @@ import { AppService } from './app.service';
 export class AppComponent implements OnInit {
   public age: number = 0;
 
-  constructor(private service: AppService) {}
+  constructor(private appService: AppService, private navbarService: NavbarService) {}
 
   ngOnInit() {
-    this.age = this.service.getAge();
+    this.age = this.appService.getAge();
+    this.navbarService.setMenuWithWidth();
+    this.navbarService.setBurgerMenuSettings();
+    this.navbarService.setThemeSettings();
+    this.navbarService.setSettingsNav();
   }
 }
