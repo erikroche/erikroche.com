@@ -2,13 +2,14 @@
 module.exports = {
   mode: 'jit',
   darkMode: 'class',
-  purge: ['./src/index.html', './src/app/app.component.html', './src/contact/contact.component.html', './src/work/work.component.html'],
+  purge: ['./src/index.html', './src/app/**/*.component.html', './src/app/**/*.component.ts'],
   content: [],
   theme: {
     extend: {
       colors: {
-        'violet-principale': '#9f00d7',
+        'mainPurple': '#682BD7',
         'dark': '#181a1b',
+        "cards": "#292c2e",
         "cards": "#292c2e",
         "light-cards": "#bcbcbc",
         // 'bg':  withOpacity('--color-bg'),
