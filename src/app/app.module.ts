@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import {WorkComponent} from "./work/work.component";
 import {ContactComponent} from "./contact/contact.component";
+import {EarthComponent} from "./earth/earth.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     WorkComponent,
-    ContactComponent
+    ContactComponent,
+    EarthComponent
   ],
   imports: [
     BrowserModule,

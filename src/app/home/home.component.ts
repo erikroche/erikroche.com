@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {AppService} from "../app.service";
-import {NavbarService} from "../services/navbar.service";
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {HomeService} from "./home.service";
+import * as THREE from 'three';
+
 
 @Component({
   selector: 'app-home',
