@@ -32,6 +32,11 @@ export class EarthComponent implements OnInit {
     cameraControls.mouseButtons.wheel = CameraControls.ACTION.NONE;
 
     // @ts-ignore
+    cameraControls.touches.one = CameraControls.ACTION.ROTATE;
+    cameraControls.touches.two = CameraControls.ACTION.NONE;
+    cameraControls.touches.three = CameraControls.ACTION.NONE;
+
+    // @ts-ignore
     globalThis.cameraControls = cameraControls;
 
     const loader = new GLTFLoader();
@@ -63,11 +68,10 @@ export class EarthComponent implements OnInit {
       const delta = clock.getDelta();
       const updated = cameraControls.update( delta );
       updateLightPosition(camera);
-      requestAnimationFrame( anim );
-      if ( updated ) {
+      if (updated) {
         renderer.render( scene, camera );
-        console.log( 'rendered' );
       }
+      requestAnimationFrame( anim );
     } )();
 
     function updateLightPosition(camera: THREE.PerspectiveCamera) {
