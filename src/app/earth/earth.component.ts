@@ -11,13 +11,12 @@ globalThis.THREE = THREE;
   styleUrls: ['./earth.component.css']
 })
 export class EarthComponent implements OnInit {
-  @ViewChild('rendererContainer', {static: false}) rendererContainer: ElementRef | undefined;
   ngOnInit(): void {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const width = 500;
+    const height = 500;
     const clock = new THREE.Clock();
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera( 60, width / height, 0.01, 100 );
+    const camera = new THREE.PerspectiveCamera( 28, width / height, 0.01, 100 );
     let directionalLight: THREE.DirectionalLight | null = null;
 
     // @ts-ignore
@@ -25,19 +24,22 @@ export class EarthComponent implements OnInit {
     camera.position.set( 0, 0, 5 );
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize( width, height );
-    document.body.appendChild( renderer.domElement );
+    document.querySelector("app-earth")?.appendChild( renderer.domElement );
 
     const cameraControls = new CameraControls( camera, renderer.domElement );
+    cameraControls.mouseButtons.left = CameraControls.ACTION.ROTATE;
+    cameraControls.mouseButtons.right = CameraControls.ACTION.NONE;
+    cameraControls.mouseButtons.wheel = CameraControls.ACTION.NONE;
+
     // @ts-ignore
     globalThis.cameraControls = cameraControls;
 
-    // path from content root : src/assets/gltf/low_poly_earth.gltf
     const loader = new GLTFLoader();
     loader.load(
       'assets/gltf/low_poly_earth.gltf',
       ( gltf ) => {
         const model = gltf.scene;
-        // Ajoutez le modèle à la scène
+
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
 
@@ -59,7 +61,6 @@ export class EarthComponent implements OnInit {
 
     ( function anim () {
       const delta = clock.getDelta();
-      const elapsed = clock.getElapsedTime();
       const updated = cameraControls.update( delta );
       updateLightPosition(camera);
       requestAnimationFrame( anim );
