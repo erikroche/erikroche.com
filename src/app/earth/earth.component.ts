@@ -11,20 +11,23 @@ globalThis.THREE = THREE;
   styleUrls: ['./earth.component.css']
 })
 export class EarthComponent implements OnInit {
+  @ViewChild('canvas', { static: true }) canvas!: ElementRef<HTMLCanvasElement>;
   ngOnInit(): void {
-    const width = 500;
-    const height = 500;
+    let width = 500;
+    let height = 500;
     const clock = new THREE.Clock();
     const scene = new THREE.Scene();
+
+    setWindowSize();
+
     const camera = new THREE.PerspectiveCamera( 28, width / height, 0.01, 100 );
     let directionalLight: THREE.DirectionalLight | null = null;
 
     // @ts-ignore
     globalThis.camera = camera;
     camera.position.set( 0, 0, 5 );
-    const renderer = new THREE.WebGLRenderer();
+    const renderer = new THREE.WebGLRenderer({ canvas: this.canvas.nativeElement });
     renderer.setSize( width, height );
-    document.querySelector("app-earth")?.appendChild( renderer.domElement );
 
     const cameraControls = new CameraControls( camera, renderer.domElement );
     cameraControls.mouseButtons.left = CameraControls.ACTION.ROTATE;
@@ -79,7 +82,28 @@ export class EarthComponent implements OnInit {
         directionalLight.position.copy(camera.position);
       }
     }
+    window.addEventListener( 'resize', onWindowResize, false );
+    function onWindowResize() {
+      console.log(window.innerWidth)
+      setWindowSize();
+      renderer.setSize( width, height );
+      camera.aspect = width / height;
+    }
+
+    function setWindowSize() {
+      if(window.innerWidth > 1270){
+        width = height = 500;
+      } else if(window.innerWidth > 1000){
+        width = height = 450;
+      } else if(window.innerWidth > 700){
+        width = height = 400;
+      } else if(window.innerWidth > 460){
+        width = height = 350;
+      } else if(window.innerWidth > 320){
+        width = height = 300;
+      } else {
+        width = height = 250;
+      }
+    }
   }
-
-
 }
