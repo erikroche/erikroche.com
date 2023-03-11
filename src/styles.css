@@ -513,6 +513,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.static {
+  position: static;
+}
+
 .absolute {
   position: absolute;
 }
@@ -551,12 +555,12 @@ video {
   margin-top: 2.5rem;
 }
 
-.mt-24 {
-  margin-top: 6rem;
-}
-
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .mr-3 {
@@ -565,10 +569,6 @@ video {
 
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.ml-48 {
-  margin-left: 12rem;
 }
 
 .mt-3 {
@@ -635,10 +635,6 @@ video {
   width: 100vw;
 }
 
-.w-auto {
-  width: auto;
-}
-
 .w-80 {
   width: 20rem;
 }
@@ -663,10 +659,6 @@ video {
   max-width: 72rem;
 }
 
-.flex-grow {
-  flex-grow: 1;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -677,10 +669,18 @@ video {
           user-select: none;
 }
 
+.resize {
+  resize: both;
+}
+
 .appearance-none {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .flex-wrap {
@@ -817,7 +817,7 @@ body {
 }
 
 /* .container {
-    
+
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -836,7 +836,7 @@ nav {
 }
 
 .menu-title {
-  font-size: 28px;
+/*  font-size: 28px;*/
   font-weight: 900;
   /* color: var(--light); */
 }
@@ -1232,6 +1232,10 @@ nav {
 }
 */
 
+span {
+  white-space:pre;
+}
+
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1272,6 +1276,10 @@ nav {
     margin-top: 3.5rem;
   }
 
+  .phone\:mt-32 {
+    margin-top: 8rem;
+  }
+
   .phone\:inline {
     display: inline;
   }
@@ -1280,8 +1288,20 @@ nav {
     display: none;
   }
 
+  .phone\:h-24 {
+    height: 6rem;
+  }
+
+  .phone\:h-72 {
+    height: 18rem;
+  }
+
   .phone\:h-96 {
     height: 24rem;
+  }
+
+  .phone\:w-24 {
+    width: 6rem;
   }
 
   .phone\:w-96 {
@@ -1319,8 +1339,24 @@ nav {
     margin-right: 0px;
   }
 
+  .phoneL\:mt-24 {
+    margin-top: 6rem;
+  }
+
+  .phoneL\:h-56 {
+    height: 14rem;
+  }
+
+  .phoneL\:h-80 {
+    height: 20rem;
+  }
+
   .phoneL\:h-124 {
     height: 31rem;
+  }
+
+  .phoneL\:w-56 {
+    width: 14rem;
   }
 
   .phoneL\:w-124 {
@@ -1339,6 +1375,14 @@ nav {
 
   .tablet\:mr-24 {
     margin-right: 6rem;
+  }
+
+  .tablet\:mt-56 {
+    margin-top: 14rem;
+  }
+
+  .tablet\:mb-56 {
+    margin-bottom: 14rem;
   }
 
   .tablet\:inline {

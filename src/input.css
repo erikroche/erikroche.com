@@ -26,7 +26,7 @@ body {
     font-family: 'Fira Sans', sans-serif;
 }
 /* .container {
-    
+
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -430,3 +430,7 @@ nav {
     }
 }
 */
+
+span {
+  white-space:pre;
+}
