@@ -67,13 +67,44 @@ export class EarthComponent implements OnInit {
       }
     );
 
+    let userDragging = false;
+    let disableAutoRotate = false;
+
+    const onRest = () => {
+      cameraControls.removeEventListener( 'rest', onRest );
+      userDragging = false;
+      disableAutoRotate = false;
+    }
+
+    cameraControls.addEventListener( 'controlstart', () => {
+      cameraControls.removeEventListener( 'rest', onRest );
+      userDragging = true;
+      disableAutoRotate = true;
+    } );
+
+    cameraControls.addEventListener( 'controlend', () => {
+      if ( cameraControls.active )
+        cameraControls.addEventListener( 'rest', onRest );
+      else
+        onRest();
+    } );
+
+    cameraControls.addEventListener( 'transitionstart', () => {
+      if ( userDragging ) return;
+      disableAutoRotate = true;
+      cameraControls.addEventListener( 'rest', onRest );
+    } );
+
     ( function anim () {
       const delta = clock.getDelta();
       const updated = cameraControls.update( delta );
       updateLightPosition(camera);
-      if (updated) {
+      if ( !disableAutoRotate )
+        cameraControls.azimuthAngle += 20 * delta * THREE.MathUtils.DEG2RAD;
+
+      if (updated)
         renderer.render( scene, camera );
-      }
+
       requestAnimationFrame( anim );
     } )();
 
@@ -82,7 +113,9 @@ export class EarthComponent implements OnInit {
         directionalLight.position.copy(camera.position);
       }
     }
+
     window.addEventListener( 'resize', onWindowResize, false );
+
     function onWindowResize() {
       console.log(window.innerWidth)
       setWindowSize();

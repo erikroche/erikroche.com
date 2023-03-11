@@ -1396,4 +1396,8 @@ span {
   .tablet\:flex-row {
     flex-direction: row;
   }
+
+  .tablet\:text-h1 {
+    font-size: 28px;
+  }
 }
