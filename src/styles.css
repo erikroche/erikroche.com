@@ -836,7 +836,7 @@ nav {
 }
 
 .menu-title {
-/*  font-size: 28px;*/
+  font-size: 28px;
   font-weight: 900;
   /* color: var(--light); */
 }
