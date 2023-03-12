@@ -17,5 +17,10 @@ export enum Languages {
   Numpy = 'Numpy',
   Matplotlib = 'Matplotlib',
   OpenCV = 'OpenCV',
-  ThreeJS = 'ThreeJS'
+  ThreeJS = 'ThreeJS',
+  TenserFlow = 'TenserFlow',
+  Keras = 'Keras',
+  AndroidStudio = 'Android Studio',
+  Kotlin = 'Kotlin',
+  API = 'API',
 }

@@ -775,6 +775,11 @@ video {
   background-color: rgb(188 188 188 / var(--tw-bg-opacity));
 }
 
+.bg-mainPurple {
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 43 215 / var(--tw-bg-opacity));
+}
+
 .align-middle {
   vertical-align: middle;
 }
@@ -1270,6 +1275,11 @@ nav {
 
 span {
   white-space:pre;
+}
+
+.hover\:bg-mainPurple:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 43 215 / var(--tw-bg-opacity));
 }
 
 .hover\:text-white:hover {

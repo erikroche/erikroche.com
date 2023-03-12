@@ -23,14 +23,6 @@ export class WorkComponent implements OnInit{
       'https://github.com/ZIRTR0X/MinesWeeper_JS',
       'https://zirtr0x.github.io/MinesWeeper_JS/'
     );
-    const bootstrap = new Project(
-      2,
-      'GOT Website',
-      'This project was done in the first year of a two-year university diploma in computer science at UCA.',
-      [Languages.Bootstrap, Languages.HTML],
-      'https://github.com/ZIRTR0X/Projet-1A-Site-web-en-bootstrap',
-      'https://zirtr0x.github.io/Projet-1A-Site-web-en-bootstrap/'
-    );
     const connect4 = new Project(
       3,
       'Connect4',
@@ -53,6 +45,20 @@ export class WorkComponent implements OnInit{
       [Languages.Python, Languages.Sklearn, Languages.Pandas, Languages.Numpy, Languages.OpenCV],
       'https://github.com/ZIRTR0X/AI-Fruit-Classification'
     );
-    this.projects.push(mineSweeper, portfolio, connect4, fruitClassification, bootstrap);
+    const objectDetection = new Project(
+      5,
+      'Object Detection',
+      'Machine learning project make in an university diploma in computer science. It allows to recognize objects (pedestrians and vehicles) in an urban environment using different technologies.',
+      [Languages.Python, Languages.TenserFlow, Languages.Keras],
+      'https://github.com/ZIRTR0X/Project-Object-Detection'
+    );
+    const cinapp = new Project(
+      5,
+      'CineApp',
+      'CineApp is an Android application project dedicated to movie lovers. It allows users to view information about recent and popular movies, add them to their favourites list and rate them.',
+      [Languages.AndroidStudio, Languages.Kotlin, Languages.API],
+      'https://github.com/ZIRTR0X/Cinapp'
+    );
+    this.projects.push(mineSweeper, portfolio, cinapp, connect4, objectDetection, fruitClassification);
   }
 }
