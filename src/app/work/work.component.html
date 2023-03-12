@@ -2,25 +2,24 @@
 <div class="mt-8 mb-8">
   <div class="flex justify-center items-center w-screen">
     <div class="max-w-6xl flex flex-wrap justify-center items-center w-screen">
-      <div *ngFor="let project of projects" class="h-60 w-80 dark:bg-cards bg-light-cards rounded-lg my-5 mx-5">
+      <div *ngFor="let project of projects" class="h-52 w-80 dark:bg-cards bg-light-cards rounded-lg my-5 mx-5">
         <div class="mr-3 ml-3 mt-2">
-          <div class="flex justify-between  h-10 rounded-full">
-            <img src="./assets/img/folder.png" alt="folder.png" class="w-7 h-7 mt-2 ml-2">
-            <div class="flex justify-between w-10">
-              <ng-container *ngIf="project.githubLink" class="w-4 h-4 mt-3 mr-3">
-                <a [href]="project.githubLink">
+          <div class="flex justify-between mt-4 h-10 rounded-full">
+            <p class="mb-2 font-semibold">{{ project.title }}</p>
+            <div class="flex justify-end">
+              <ng-container *ngIf="project.githubLink">
+                <a [href]="project.githubLink" class="w-7 h-7">
                   <img src="./assets/img/github-logo.png" alt="github-logo.png">
                 </a>
               </ng-container>
-              <ng-container *ngIf="project.websiteLink" class="w-4 h-4 mr-3 mt-3">
-                <a [href]="project.websiteLink">
+              <ng-container *ngIf="project.websiteLink">
+                <a [href]="project.websiteLink" class="w-7 h-7">
                   <img src="./assets/img/web.png" alt="web.png">
                 </a>
               </ng-container>
             </div>
           </div>
-          <div class=" mt-4 h-32 text-s">
-            <p class="mb-2 font-semibold">{{ project.title }}</p>
+          <div class=" mt-4 h-24 text-s">
             <p class="text-xxs">{{ project.description }}</p>
           </div>
           <div class="flex flex-row mt-3 text-xxxs">
@@ -33,7 +32,7 @@
       </div>
     </div>
   </div>
-  <div class="flex justify-center items-center w-screen">
+  <div *ngIf="projects.length > 6" class="flex justify-center items-center w-screen">
     <button class="rounded-lg border-2 border-violet-principale hover:bg-violet-principale w-32 h-10">
       Show More
     </button>

@@ -21,7 +21,7 @@ export class WorkComponent implements OnInit{
       'A small personal project, consisting of the creation of a minesweeper coded exclusively in JavaScript.',
       [Languages.JavasScript, Languages.CSS, Languages.HTML],
       'https://github.com/ZIRTR0X/MinesWeeper_JS',
-      'zirtr0x.github.io/MinesWeeper_JS/'
+      'https://zirtr0x.github.io/MinesWeeper_JS/'
     );
     const bootstrap = new Project(
       2,
@@ -41,11 +41,18 @@ export class WorkComponent implements OnInit{
     const portfolio = new Project(
       4,
       'Portfolio',
-      'This is this website.',
-      [Languages.Angular, Languages.TailwindCSS, Languages.HTML, Languages.TypeScript],
+      'This is this website. It is a personal project, which allows me to put forward my different projects whether they are academic or personal.',
+      [Languages.Angular, Languages.ThreeJS, Languages.TailwindCSS, Languages.TypeScript, Languages.Firebase],
       'https://github.com/ZIRTR0X/PersonalWebsite',
       'https://julien-theme.dev/'
     );
-    this.projects.push(mineSweeper, bootstrap, connect4, portfolio);
+    const fruitClassification = new Project(
+      5,
+      'AI Fruit Classification',
+      'An AI made in python, which by giving it an image of a fruit, it will give us the name of this fruit. It\'s a school project made in second year of a two-year university diploma in computer science at UCA.',
+      [Languages.Python, Languages.Sklearn, Languages.Pandas, Languages.Numpy, Languages.OpenCV],
+      'https://github.com/ZIRTR0X/AI-Fruit-Classification'
+    );
+    this.projects.push(mineSweeper, portfolio, connect4, fruitClassification, bootstrap);
   }
 }

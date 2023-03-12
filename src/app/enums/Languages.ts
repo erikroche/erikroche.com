@@ -10,5 +10,12 @@ export enum Languages {
   CSS = 'CSS',
   HTML = 'HTML',
   SWIFT = 'SWIFT',
-  Angular = 'Angular'
+  Angular = 'Angular',
+  Python = 'Python',
+  Sklearn = 'Sklearn',
+  Pandas = 'Pandas',
+  Numpy = 'Numpy',
+  Matplotlib = 'Matplotlib',
+  OpenCV = 'OpenCV',
+  ThreeJS = 'ThreeJS'
 }
