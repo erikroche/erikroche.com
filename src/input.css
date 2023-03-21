@@ -434,3 +434,27 @@ nav {
 span {
   white-space:pre;
 }
+
+/*Scroll bar*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #181a1b;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #292c2e;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #35393a;
+}
+
+/*Scroll bar end*/
