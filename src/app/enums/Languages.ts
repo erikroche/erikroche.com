@@ -23,4 +23,8 @@ export enum Languages {
   AndroidStudio = 'Android Studio',
   Kotlin = 'Kotlin',
   API = 'API',
+  C = 'C',
+  CouchDB = 'CouchDB',
+  Ionic = 'Ionic',
+  Git = 'Git',
 }
