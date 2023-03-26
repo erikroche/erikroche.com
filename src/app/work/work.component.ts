@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Project} from "../models/Project";
 import {Languages} from "../enums/Languages";
+import {Language} from "../models/Language";
+import {LanguagesLevel} from "../enums/LanguageLevel";
 
 @Component({
   selector: 'app-work',
@@ -8,10 +10,11 @@ import {Languages} from "../enums/Languages";
 })
 export class WorkComponent implements OnInit{
   public projects: Project[] = [];
+  public languages: Language[] = []
 
-  constructor() {}
   ngOnInit() {
     this.setProjects();
+    this.setLanguages();
   }
 
   public setProjects() {
@@ -60,5 +63,86 @@ export class WorkComponent implements OnInit{
       'https://github.com/ZIRTR0X/Cinapp'
     );
     this.projects.push(mineSweeper, portfolio, cinapp, connect4, objectDetection, fruitClassification);
+  }
+
+  public setLanguages() {
+    const typescript = new Language(
+      1,
+      Languages.TypeScript,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+      "I use it in my work-study project, and in my personal projects.",
+      LanguagesLevel.Advanced
+    );
+    const couchDB = new Language(
+      2,
+      Languages.CouchDB,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/couchdb/couchdb-original.svg',
+      "I use it in my work-study project.",
+      LanguagesLevel.Novice
+    );
+    const ionic = new Language(
+      3,
+      Languages.Ionic,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg',
+      "I use it in my work-study project.",
+      LanguagesLevel.Novice
+    );
+    const angular = new Language(
+      4,
+      Languages.Angular,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+      "I use it in my work-study project, and in my personal projects.",
+      LanguagesLevel.Intermediate
+    );
+    const git = new Language(
+      5,
+      Languages.Git,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+      "I use it in my personal project, school project and my work-study project.",
+      LanguagesLevel.Advanced
+    );
+    const html = new Language(
+      6,
+      Languages.HTML,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+      "I use js in most of my projects.",
+      LanguagesLevel.Advanced,
+    );
+    const css = new Language(
+      7,
+      Languages.CSS,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+      "I use js in most of my projects.",
+      LanguagesLevel.Intermediate,
+    );
+    const javascript = new Language(
+      8,
+      Languages.JavasScript,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+      "I use js in most of my projects.",
+      LanguagesLevel.Advanced,
+    );
+    const java = new Language(
+      9,
+      Languages.Java,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+      "I use it especially for school projects.",
+      LanguagesLevel.Advanced,
+    );
+    const csharp = new Language(
+      10,
+      Languages.CSharp,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
+      "I use it especially for school projects.",
+      LanguagesLevel.Intermediate,
+    );
+    const c = new Language(
+      11,
+      Languages.C,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
+      "I use it especially for school projects.",
+      LanguagesLevel.Intermediate,
+    );
+    this.languages.push(typescript, couchDB, ionic, angular, git, html, css, javascript, java, csharp, c);
   }
 }
