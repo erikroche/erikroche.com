@@ -117,7 +117,6 @@ export class EarthComponent implements OnInit {
     window.addEventListener( 'resize', onWindowResize, false );
 
     function onWindowResize() {
-      console.log(window.innerWidth)
       setWindowSize();
       renderer.setSize( width, height );
       camera.aspect = width / height;

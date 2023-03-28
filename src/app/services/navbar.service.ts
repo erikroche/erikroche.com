@@ -1,96 +1,106 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {ThemeService} from "./theme.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavbarService {
 
-  constructor() { }
+  //region properties
+  private menu!: HTMLDivElement;
+  private body!: HTMLDivElement;
+  private burger!: HTMLDivElement;
+  private footer!: HTMLDivElement;
 
-  //---- burger menu ----
-  public setSettingsNav(){
-    let menu = document.querySelector('.burger-menu') as HTMLDivElement;
-    menu.style.display = "none";
+  //endregion properties
+  //region methods
+
+  constructor(private themeService: ThemeService) {
+    this.setProperties();
   }
 
-  private setMenuBurger(){
-    let body = document.querySelector('.maindiv') as HTMLDivElement;
-    let menu = document.querySelector('.burger-menu') as HTMLDivElement;
-    let burger = document.querySelector('.hamburger') as HTMLDivElement;
-    if (burger.classList.contains('is-active')){
-        body.style.display = "none";
-        menu.style.display = "block";
-    }else{
-        body.style.display = "block";
-        menu.style.display = "none";
-    }
+  /** This method set the properties of the class. */
+  public setSettingsNav(): void{
+    this.setProperties();
+    this.changeDivDisplay(this.menu, "none");
   }
 
-  public hamburgerToggle(){
-    let local = this;
-    let hamburger = document.querySelector('.hamburger') as HTMLDivElement;
-    hamburger.addEventListener('click', function () {
-        this.classList.toggle('is-active');
-        local.setMenuBurger();
-    });
-  }
-  //---- end burger menu ----
-
-  public setThemeSettings(){
-    localStorage.setItem('theme', 'light');
-    this.setTheme();
+  /** This method change the display of the footer, the body and the menu for hide or show the burger menu. */
+  private setMenuBurger(): void{
+    this.setProperties();
+    if (this.burger.classList.contains('is-active'))
+      this.changeDivsDisplay([this.body, this.footer, this.menu], ["none", "none", "block"]);
+    else
+      this.changeDivsDisplay([this.body, this.footer, this.menu], ["block", "block", "none"]);
   }
 
-  public setBurgerMenuSettings(){
-    let local = this;
-    let toggle = document.querySelectorAll('.toggle-checkbox') as NodeListOf<HTMLInputElement>;
-    toggle.forEach(e => {
-        e.checked = true;
-    });
-  
-    toggle.forEach(e => {
-        e.addEventListener('click', function () {
-            console.log("click");
-            local.setTheme();
-            if(e.checked){
-              local.checkToggleSwicth(true, toggle);
-            }else{
-              local.checkToggleSwicth(false, toggle);
-            }
-        });
-    });
+  /** This method is called when the user click on the hamburger menu, it show or hide the menu. */
+  public clickHamburger(): void{
+    this.setProperties();
+    this.burger.classList.toggle('is-active');
+    this.setMenuBurger();
   }
 
-  public checkToggleSwicth(isActivate: boolean, toggle: NodeListOf<HTMLInputElement>){
-      toggle.forEach(e => {
-          e.checked = isActivate;
-      });
+  /** This method set the toggle switch button to true. */
+  public setBurgerMenuSettings(): void{
+    const toggle: NodeListOf<HTMLInputElement> = document.querySelectorAll('.toggle-checkbox');
+    toggle.forEach(e => e.checked = true);
   }
 
-  public setTheme(){
-      if (localStorage.getItem('theme') == "light"){
-          localStorage.setItem('theme', 'dark');
-          document.documentElement.classList.add("dark");
-      } else {
-          localStorage.setItem('theme', 'light');
-          document.documentElement.classList.remove("dark"); 
-      }
-      console.log(localStorage.getItem('theme'));
-  }
-
-  /**
-   * Cette fonction permet d'enlever le menu burger lorsque la taille de la fênetre est supérieur à 970px
+  /** This method is called when the user click on the toggle switch and change the theme.
+   * @param event The event of the click.
    */
-  public setMenuWithWidth(){
-      addEventListener('resize', function () {
-          let body = document.querySelector('.maindiv') as HTMLDivElement;
-          let menu = document.querySelector('.burger-menu') as HTMLDivElement;
-          let hamburger = document.querySelector('.hamburger') as HTMLDivElement;
-          if (window.innerWidth > 970){
-              body.style.display = "block";
-              menu.style.display = "none";
-              hamburger.classList.remove('is-active');
-          }
-      });
-  } 
+  public clickToggleSwicth(event: Event): void{
+    this.themeService.changeTheme();
+    if((event.target as HTMLInputElement).checked)
+      this.checkToggleSwicth(true, (event.target as HTMLInputElement));
+    else
+      this.checkToggleSwicth(false, (event.target as HTMLInputElement));
+  }
+
+  /** This method check or uncheck the toggle switch.
+   * @param isActivate True if the toggle switch is checked, false otherwise.
+   * @param toggle The toggle switch to check or uncheck.
+   */
+  public checkToggleSwicth(isActivate: boolean, toggle: HTMLInputElement): void{
+      toggle.checked = isActivate;
+  }
+
+  /** This method set the menu with the width of the screen. */
+  public setMenuWithWidth(): void{
+    this.setProperties();
+    const local: NavbarService = this;
+    addEventListener('resize', function () {
+        if (window.innerWidth > 970){
+          local.changeDivsDisplay([local.body, local.menu], ["block", "none"]);
+          local.burger.classList.remove('is-active');
+        }
+    });
+  }
+
+  /** This method applies the display given in parameter to a div.
+   * @param div The div to change the display.
+   * @param display The display to apply to the div.
+   */
+  public changeDivDisplay(div: HTMLDivElement, display: string): void {
+    div.style.display = display;
+  }
+
+  /** This method applies the displays given in parameter to a list of div.
+   * @param divs A table of divs to change the display.
+   * @param displays A table of displays to apply to the divs.
+   */
+  public changeDivsDisplay(divs: HTMLDivElement[], displays: string[]): void {
+    divs.forEach((div , index) => this.changeDivDisplay(div, displays[index]));
+  }
+
+  /** This method set the properties of the class. */
+  private setProperties(): void{
+    this.menu = this.menu ? this.menu : document.querySelector('.burger-menu') as HTMLDivElement;
+    this.body = this.body ? this.body : document.querySelector('.maindiv') as HTMLDivElement;
+    this.burger = this.burger ? this.burger : document.querySelector('.hamburger') as HTMLDivElement;
+    this.footer = this.footer ? this.footer : document.querySelector("footer") as HTMLDivElement;
+  }
+
+  //endregion methods
 }
