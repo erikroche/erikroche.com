@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'mainPurple': '#682BD7',
+        'secondaryPurple': '#8d54f7',
         'dark': '#181a1b',
         "cards": "#292c2e",
         "cards": "#292c2e",
@@ -32,6 +33,7 @@ module.exports = {
       },
     },
     fontSize: {
+      xxxxs: '11px',
       xxxs: '12px',
       xxs: '13px',
       xs: '1.25rem',

@@ -37,7 +37,7 @@ export class WorkComponent implements OnInit{
       4,
       'Portfolio',
       'This is this website. It is a personal project, which allows me to put forward my different projects whether they are academic or personal.',
-      [Languages.Angular, Languages.ThreeJS, Languages.TailwindCSS, Languages.TypeScript, Languages.Firebase],
+      [Languages.Angular, Languages.ThreeJS, Languages.TailwindCSS, Languages.TypeScript],
       'https://github.com/ZIRTR0X/PersonalWebsite',
       'https://julien-theme.dev/'
     );

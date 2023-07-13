@@ -20,13 +20,12 @@
                   </ng-container>
                 </div>
               </div>
-              <div class=" mt-4 h-24 text-s">
+              <div class=" mt-4 h-24 text-s text-gray-500 dark:text-gray-300">
                 <p class="text-xxs">{{ project.description }}</p>
               </div>
-              <div class="flex flex-row mt-3 text-xxxs">
+              <div class="flex flex-row mt-2 text-xxxxs">
                 <div  *ngFor="let language of project.languages; let i = index">
-                  <span>{{ language }}</span>
-                  <span *ngIf="i !== project.languages.length - 1"> • </span>
+                  <span class="rounded-2xl bg-secondaryPurple p-2 m-1">{{ language }}</span>
                 </div>
               </div>
             </div>
