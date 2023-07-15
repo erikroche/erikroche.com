@@ -11,6 +11,7 @@ export class NavbarService {
   private body!: HTMLDivElement;
   private burger!: HTMLDivElement;
   private footer!: HTMLDivElement;
+  private themeButton!: HTMLInputElement;
 
   //endregion properties
   //region methods
@@ -41,10 +42,12 @@ export class NavbarService {
     this.setMenuBurger();
   }
 
-  /** This method set the toggle switch button to true. */
-  public setBurgerMenuSettings(): void{
+  /** This method set the toggle switch button to true or false. 
+   * @param isActive The value to set the toggle switch button.
+   */
+  public setBurgerMenuSettings(isActive: boolean): void{
     const toggle: NodeListOf<HTMLInputElement> = document.querySelectorAll('.toggle-checkbox');
-    toggle.forEach(e => e.checked = true);
+    toggle.forEach(e => e.checked = isActive);
   }
 
   /** This method is called when the user click on the toggle switch and change the theme.
@@ -52,18 +55,7 @@ export class NavbarService {
    */
   public clickToggleSwicth(event: Event): void{
     this.themeService.changeTheme();
-    if((event.target as HTMLInputElement).checked)
-      this.checkToggleSwicth(true, (event.target as HTMLInputElement));
-    else
-      this.checkToggleSwicth(false, (event.target as HTMLInputElement));
-  }
-
-  /** This method check or uncheck the toggle switch.
-   * @param isActivate True if the toggle switch is checked, false otherwise.
-   * @param toggle The toggle switch to check or uncheck.
-   */
-  public checkToggleSwicth(isActivate: boolean, toggle: HTMLInputElement): void{
-      toggle.checked = isActivate;
+    this.setBurgerMenuSettings((event.target as HTMLInputElement).checked);
   }
 
   /** This method set the menu with the width of the screen. */
@@ -100,10 +92,12 @@ export class NavbarService {
     this.body = this.body ? this.body : document.querySelector('.maindiv') as HTMLDivElement;
     this.burger = this.burger ? this.burger : document.querySelector('.hamburger') as HTMLDivElement;
     this.footer = this.footer ? this.footer : document.querySelector("footer") as HTMLDivElement;
+    this.themeButton = this.themeButton ? this.themeButton : document.querySelector('.toggle-checkbox') as HTMLInputElement;
   }
 
   public clickMenuEvent(): void{
-    this.menu.addEventListener('click', () => {
+    const menu = document.querySelector('.burger-menu a') as HTMLDivElement;
+    menu.addEventListener('click', (event) => {
       this.clickHamburger();
     });
   }

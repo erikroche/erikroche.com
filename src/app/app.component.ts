@@ -12,7 +12,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.navbarService.setMenuWithWidth();
-    this.navbarService.setBurgerMenuSettings();
+    this.navbarService.setBurgerMenuSettings(true);
     this.themeService.setThemeSettings();
     this.navbarService.setSettingsNav();
     this.navbarService.clickMenuEvent();

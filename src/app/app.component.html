@@ -7,12 +7,12 @@
           <li class="hover:text-white"><a routerLink="/home" class="is-active">Home</a></li>
           <li class="hover:text-white"><a routerLink="/work">Work</a></li>
           <li class="hover:text-white"><a routerLink="/contact">Contact</a></li>
-          <!-- <div class="mt-2">
+          <div>
             <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
               <input (click)="clickToggleSwicth($event)" type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-black border-4 appearance-none cursor-pointer"/>
               <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-dark cursor-pointer"></label>
             </div>
-          </div> -->
+          </div>
         </ol>
       </div>
       <button (click)="clickHamburger()" class="hamburger phone:inline tablet:hidden">
@@ -28,7 +28,6 @@
     <router-outlet></router-outlet>
   </div>
   <div class="burger-menu flex flex-col justify-center text-h1">
-    <!-- <ol class="text-h1 ml-3 flex flex-col"> -->
     <div class="my-6">
       <a routerLink="/home" class="hover:text-mainPurple is-active w-auto">
         <p class="flex flex-col justify-center items-center ">Home</p>
@@ -44,12 +43,14 @@
         <p class="flex flex-col justify-center items-center ">Contact</p>
       </a>
     </div>
-      <!-- <div class="mt-2">
-        <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-          <input type="checkbox" name="toggle2" id="toggle2" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-black border-4 appearance-none cursor-pointer"/>
-          <label for="toggle2" class="toggle-label block overflow-hidden h-6 rounded-full bg-dark cursor-pointer"></label>
+    <div class="flex flex-col justify-center items-center">
+      <div>
+        <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in ">
+          <input (click)="clickToggleSwicth($event)" type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-black border-4 appearance-none cursor-pointer"/>
+          <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-dark cursor-pointer"></label>
         </div>
-      </div> -->
+      </div>
+    </div>
   </div>
 </main>
 <footer>
