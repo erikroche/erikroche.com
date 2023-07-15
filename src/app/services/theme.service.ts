@@ -20,4 +20,9 @@ export class ThemeService {
     localStorage.setItem('theme', 'light');
     this.changeTheme();
   }
+
+  /** This method get if the theme is dark or not. */
+  public isDarkTheme(): boolean{
+    return localStorage.getItem('theme') === "dark";
+  }
 }

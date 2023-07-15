@@ -97,7 +97,7 @@ export class NavbarService {
 
   public clickMenuEvent(): void{
     const menu = document.querySelector('.burger-menu a') as HTMLDivElement;
-    menu.addEventListener('click', (event) => {
+    menu.addEventListener('click', () => {
       this.clickHamburger();
     });
   }

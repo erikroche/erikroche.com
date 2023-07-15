@@ -1,7 +1,8 @@
-import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as THREE from 'three';
 import CameraControls from 'camera-controls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { ThemeService } from '../services/theme.service';
 CameraControls.install( { THREE: THREE } );
 globalThis.THREE = THREE;
 
@@ -11,6 +12,9 @@ globalThis.THREE = THREE;
   styleUrls: ['./earth.component.css']
 })
 export class EarthComponent implements OnInit {
+  private themeService = new ThemeService();
+  public renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer();
+
   @ViewChild('canvas', { static: true }) canvas!: ElementRef<HTMLCanvasElement>;
   ngOnInit(): void {
     let width = 500;
@@ -26,10 +30,10 @@ export class EarthComponent implements OnInit {
     // @ts-ignore
     globalThis.camera = camera;
     camera.position.set( 0, 0, 5 );
-    const renderer = new THREE.WebGLRenderer({ canvas: this.canvas.nativeElement });
-    renderer.setSize( width, height );
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas.nativeElement });
+    this.renderer.setSize( width, height );
 
-    const cameraControls = new CameraControls( camera, renderer.domElement );
+    const cameraControls = new CameraControls( camera, this.renderer.domElement );
     cameraControls.mouseButtons.left = CameraControls.ACTION.ROTATE;
     cameraControls.mouseButtons.right = CameraControls.ACTION.NONE;
     cameraControls.mouseButtons.wheel = CameraControls.ACTION.NONE;
@@ -56,8 +60,8 @@ export class EarthComponent implements OnInit {
         scene.add(directionalLight);
 
         scene.add( model );
-        renderer.setClearColor(new THREE.Color(0xff181a1b));
-        renderer.render( scene, camera );
+        this.renderer.setClearColor(new THREE.Color(this.themeService.isDarkTheme() ? "#181a1b" : "#ffffff"));
+        this.renderer.render( scene, camera );
       },
       ( xhr ) => {
         console.log( 'Earth ' +( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -95,6 +99,8 @@ export class EarthComponent implements OnInit {
       cameraControls.addEventListener( 'rest', onRest );
     } );
 
+    const renderer = this.renderer;
+
     ( function anim () {
       const delta = clock.getDelta();
       const updated = cameraControls.update( delta );
@@ -113,14 +119,13 @@ export class EarthComponent implements OnInit {
         directionalLight.position.copy(camera.position);
       }
     }
-
-    window.addEventListener( 'resize', onWindowResize, false );
-
-    function onWindowResize() {
+    const onWindowResize = () => {
       setWindowSize();
-      renderer.setSize( width, height );
+      this.renderer.setSize( width, height );
       camera.aspect = width / height;
     }
+
+    window.addEventListener( 'resize', onWindowResize, false );
 
     function setWindowSize() {
       if(window.innerWidth > 1270){
@@ -137,5 +142,14 @@ export class EarthComponent implements OnInit {
         width = height = 250;
       }
     }
+
+    const themeButton = document.querySelectorAll('.toggle-checkbox') as NodeListOf<HTMLInputElement>;
+
+    themeButton.forEach((button) => {
+      button.addEventListener('change', () => {
+        this.renderer.setClearColor(new THREE.Color(this.themeService.isDarkTheme() ? "#181a1b" : "#ffffff"));
+        this.renderer.render( scene, camera );
+      });
+    });
   }
 }
