@@ -15,6 +15,7 @@ export class AppComponent implements AfterViewInit {
     this.navbarService.setBurgerMenuSettings();
     this.themeService.setThemeSettings();
     this.navbarService.setSettingsNav();
+    this.navbarService.clickMenuEvent();
   }
 
   /** This method is called when the user click on the toggle switch and change the theme.

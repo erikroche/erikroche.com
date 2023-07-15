@@ -102,5 +102,11 @@ export class NavbarService {
     this.footer = this.footer ? this.footer : document.querySelector("footer") as HTMLDivElement;
   }
 
+  public clickMenuEvent(): void{
+    this.menu.addEventListener('click', () => {
+      this.clickHamburger();
+    });
+  }
+
   //endregion methods
 }

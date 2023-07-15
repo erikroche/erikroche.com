@@ -1,7 +1,7 @@
 <header>
   <nav class="bg-white dark:bg-dark text-dark dark:text-white">
     <div class="flex justify-between items-center">
-      <p class="menu-title phoneXS:text-base phone:text-h2 tablet:text-h1">JULIEN THÊME</p>
+      <p class="menu-title phoneXS:text-base phone:text-h2 tablet:text-h1"><a href="">JULIEN THÊME</a></p>
       <div class="menu phone:hidden tablet:inline">
         <ol>
           <li class="hover:text-white"><a routerLink="/home" class="is-active">Home</a></li>
@@ -27,18 +27,29 @@
   <div class="maindiv">
     <router-outlet></router-outlet>
   </div>
-  <div class="burger-menu">
-    <ol class="text-h1 ml-3">
-      <li class="hover:text-mainPurple"><a routerLink="/home" class="is-active">Home</a></li>
-      <li class="hover:text-mainPurple"><a routerLink="/work">Work</a></li>
-      <li class="hover:text-mainPurple"><a routerLink="/contact">Contact</a></li>
+  <div class="burger-menu flex flex-col justify-center text-h1">
+    <!-- <ol class="text-h1 ml-3 flex flex-col"> -->
+    <div class="my-6">
+      <a routerLink="/home" class="hover:text-mainPurple is-active w-auto">
+        <p class="flex flex-col justify-center items-center ">Home</p>
+      </a>
+    </div>
+    <div class="my-6">
+      <a routerLink="/work" class="hover:text-mainPurple">
+        <p class="flex flex-col justify-center items-center ">Work</p>
+      </a>
+    </div>
+    <div class="my-6">
+      <a routerLink="/contact" class="hover:text-mainPurple">
+        <p class="flex flex-col justify-center items-center ">Contact</p>
+      </a>
+    </div>
       <!-- <div class="mt-2">
         <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
           <input type="checkbox" name="toggle2" id="toggle2" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-black border-4 appearance-none cursor-pointer"/>
           <label for="toggle2" class="toggle-label block overflow-hidden h-6 rounded-full bg-dark cursor-pointer"></label>
         </div>
       </div> -->
-    </ol>
   </div>
 </main>
 <footer>

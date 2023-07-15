@@ -60,7 +60,7 @@ export class EarthComponent implements OnInit {
         renderer.render( scene, camera );
       },
       ( xhr ) => {
-        console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+        console.log( 'Earth ' +( xhr.loaded / xhr.total * 100 ) + '% loaded' );
       },
       ( error ) => {
         console.error( 'An error happened', error );
