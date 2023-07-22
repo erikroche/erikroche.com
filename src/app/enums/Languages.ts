@@ -27,4 +27,9 @@ export enum Languages {
   CouchDB = 'CouchDB',
   Ionic = 'Ionic',
   Git = 'Git',
+  ReactNative = 'React Native',
+  Paper = 'Paper',
+  Expo = 'Expo',
+  Quarkus = 'Quarkus',
+  MangoDB = 'MangoDB',
 }

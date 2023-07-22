@@ -49,20 +49,49 @@ export class WorkComponent implements OnInit{
       'https://github.com/ZIRTR0X/AI-Fruit-Classification'
     );
     const objectDetection = new Project(
-      5,
+      6,
       'Object Detection',
       'Machine learning project make in an university diploma in computer science. It allows to recognize objects (pedestrians and vehicles) in an urban environment using different technologies.',
       [Languages.Python, Languages.TenserFlow, Languages.Keras],
       'https://github.com/ZIRTR0X/Project-Object-Detection'
     );
     const cinapp = new Project(
-      5,
+      7,
       'CineApp',
       'CineApp is an Android application project dedicated to movie lovers. It allows users to view information about recent and popular movies, add them to their favourites list and rate them.',
       [Languages.AndroidStudio, Languages.Kotlin, Languages.API],
       'https://github.com/ZIRTR0X/Cinapp'
     );
-    this.projects.push(mineSweeper, portfolio, cinapp, connect4, objectDetection, fruitClassification);
+    const tarotScoreur = new Project(
+      8,
+      'Tarot Scoreur',
+      'The Tarot Scoreur application allows during your tarot games to automatically count the points of all the players in the game. With this application you can play online with your friend or play locally at your home !',
+      [Languages.CSharp, Languages.API],
+      'https://github.com/ZIRTR0X/TarotScoreur'
+    );
+    const AverageCalculator = new Project(
+      9,
+      'Average calculator',
+      'This project is an average calculator for students allowing to calculate their average according to the coefficients of each Teaching Units and the marks obtained in each course.',
+      [Languages.SWIFT],
+      'https://github.com/ZIRTR0X/AverageCalculator'
+    );
+    const MealGenius = new Project(
+      9,
+      'MealGenius',
+      'MealGenius is a React Native mobile application that allows you to find meals based on the ingredients you have. You can also add recipes to your favorites and view them at any time.',
+      [Languages.ReactNative, Languages.Expo, Languages.Paper, Languages.API],
+      'https://github.com/ZIRTR0X/MealGenius'
+    );
+    const MealGeniusAPI = new Project(
+      9,
+      'MealGenius API',
+      'This is the MealGenius App API. It is a REST API made with Quarkus and MongoDB.',
+      [Languages.Java, Languages.Quarkus, Languages.MangoDB],
+      'https://github.com/ZIRTR0X/MealGeniusAPI'
+    );
+    
+    this.projects.push(portfolio, MealGenius, MealGeniusAPI, mineSweeper, AverageCalculator, cinapp);
   }
 
   public setLanguages() {
@@ -70,35 +99,42 @@ export class WorkComponent implements OnInit{
       1,
       Languages.TypeScript,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-      "I use it in my work-study project, and in my personal projects.",
+      "I use it in my work-study projects, and in my personal projects.",
       LanguagesLevel.Advanced
     );
     const couchDB = new Language(
       2,
       Languages.CouchDB,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/couchdb/couchdb-original.svg',
-      "I use it in my work-study project.",
-      LanguagesLevel.Novice
+      "I use it in my work-study projects.",
+      LanguagesLevel.Advanced
     );
     const ionic = new Language(
       3,
       Languages.Ionic,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg',
-      "I use it in my work-study project.",
-      LanguagesLevel.Novice
+      "I use it in my work-study projects.",
+      LanguagesLevel.Advanced
     );
     const angular = new Language(
       4,
       Languages.Angular,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
-      "I use it in my work-study project, and in my personal projects.",
+      "I use it in my work-study projects, and in my personal projects.",
+      LanguagesLevel.Advanced
+    );
+    const swift = new Language(
+      11,
+      Languages.SWIFT,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
+      "I use it in my school projects.",
       LanguagesLevel.Intermediate
     );
     const git = new Language(
       5,
       Languages.Git,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      "I use it in my personal project, school project and my work-study project.",
+      "I use it in my personal projects, school projects and my work-study projects.",
       LanguagesLevel.Advanced
     );
     const html = new Language(
@@ -136,13 +172,20 @@ export class WorkComponent implements OnInit{
       "I use it especially for school projects.",
       LanguagesLevel.Intermediate,
     );
-    const c = new Language(
-      11,
-      Languages.C,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
-      "I use it especially for school projects.",
-      LanguagesLevel.Intermediate,
+    const threeJS = new Language(
+      12,
+      Languages.ThreeJS,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg',
+      "I use it in my personal projects.",
+      LanguagesLevel.Beginner
     );
-    this.languages.push(typescript, couchDB, ionic, angular, git, html, css, javascript, java, csharp, c);
+    const ReactNative = new Language(
+      13,
+      Languages.ReactNative,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      "I use it in my personal and school projects.",
+      LanguagesLevel.Intermediate
+    );
+    this.languages.push(typescript, couchDB, ionic, angular, swift, threeJS, ReactNative, java, csharp, git, html, css);
   }
 }
