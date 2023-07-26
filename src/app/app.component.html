@@ -4,9 +4,9 @@
       <p class="menu-title phoneXS:text-base phone:text-h2 tablet:text-h1"><a href="">JULIEN THÊME</a></p>
       <div class="menu phone:hidden tablet:inline">
         <ol>
-          <li class="hover:text-white"><a routerLink="/home" class="is-active">Home</a></li>
-          <li class="hover:text-white"><a routerLink="/work">Work</a></li>
-          <li class="hover:text-white"><a routerLink="/contact">Contact</a></li>
+          <li class="hover:text-white select-none"><a routerLink="/home" class="is-active">Home</a></li>
+          <li class="hover:text-white select-none"><a routerLink="/work">Work</a></li>
+          <li class="hover:text-white select-none"><a routerLink="/contact">Contact</a></li>
           <div>
             <div class="relative inline-block w-10 align-middle select-none transition duration-200 ease-in">
               <input (click)="clickToggleSwicth($event)" type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-black border-4 appearance-none cursor-pointer"/>
@@ -30,17 +30,17 @@
   <div class="burger-menu flex flex-col justify-center text-h1">
     <div class="my-6">
       <a routerLink="/home" class="hover:text-mainPurple is-active">
-        <p class="flex flex-col justify-center items-center ">Home</p>
+        <p class="flex flex-col justify-center items-center select-none">Home</p>
       </a>
     </div>
     <div class="my-6">
       <a routerLink="/work" class="hover:text-mainPurple">
-        <p class="flex flex-col justify-center items-center ">Work</p>
+        <p class="flex flex-col justify-center items-center select-none">Work</p>
       </a>
     </div>
     <div class="my-6">
       <a href="/contact" class="hover:text-mainPurple">
-        <p class="flex flex-col justify-center items-center ">Contact</p>
+        <p class="flex flex-col justify-center items-center select-none">Contact</p>
       </a>
     </div>
     <div class="flex flex-col justify-center items-center">

@@ -3,7 +3,7 @@
     <div class="mt-8 mb-8">
       <div class="flex justify-center items-center ">
         <div class="max-w-6xl flex flex-wrap justify-center items-center">
-          <div *ngFor="let project of projects" class="h-52 w-80 dark:bg-cards bg-light-cards rounded-lg my-5 mx-5">
+          <div *ngFor="let project of projects" class="h-52 w-80 dark:bg-cards bg-light-cards rounded-lg my-5 mx-5 transition-transform transform-gpu hover:scale-110">
             <div class="mr-3 ml-3 mt-2">
               <div class="flex justify-between mt-4 h-10 rounded-full">
                 <p class="mb-2 font-semibold">{{ project.title }}</p>
@@ -25,7 +25,7 @@
               </div>
               <div class="flex flex-row mt-2 text-xxxxs">
                 <div  *ngFor="let language of project.languages; let i = index">
-                  <span class="rounded-2xl bg-secondaryPurple p-2 m-1">{{ language }}</span>
+                  <span class="rounded-2xl bg-secondaryPurple p-2 m-1 select-none">{{ language }}</span>
                 </div>
               </div>
             </div>
@@ -33,9 +33,11 @@
         </div>
       </div>
       <div class="flex justify-center items-center">
-        <button type="button" class="rounded-lg border-2 border-mainPurple hover:bg-mainPurple w-28 h-14 mt-6">
-          <a href="https://github.com/ZIRTR0X" target="_blank">Show more</a>
-        </button>
+        <a href="https://github.com/ZIRTR0X" target="_blank">
+          <button type="button" class="rounded-lg border-2 border-mainPurple hover:bg-mainPurple w-28 h-14 mt-6 select-none">
+            Show more
+          </button>
+        </a>
       </div>
     </div>
   </div>
@@ -44,7 +46,7 @@
     <div class="mt-8 mb-8">
       <div class="flex justify-center items-center">
         <div class="max-w-6xl flex flex-wrap justify-center items-center">
-          <div *ngFor="let language of languages" class="h-40 w-72 dark:bg-cards bg-light-cards rounded-lg my-5 mx-5">
+          <div *ngFor="let language of languages" class="h-40 w-72 dark:bg-cards bg-light-cards rounded-lg my-5 mx-5 transition-transform transform-gpu hover:scale-110">
             <div class="mr-3 ml-3 mt-2">
               <table class="mt-3">
                 <tr>
@@ -63,9 +65,11 @@
         </div>
       </div>
       <div class="flex justify-center items-center">
-        <button type="button" class="rounded-lg border-2 border-mainPurple hover:bg-mainPurple w-28 h-14 mt-6">
-          <a href="https://github.com/ZIRTR0X" target="_blank">Show more</a>
-        </button>
+        <a href="https://github.com/ZIRTR0X" target="_blank">
+          <button type="button" class="rounded-lg border-2 border-mainPurple hover:bg-mainPurple w-28 h-14 mt-6 select-none">
+            Show more
+          </button>
+        </a>
       </div>
     </div>
   </div>
