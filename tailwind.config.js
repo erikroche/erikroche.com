@@ -2,8 +2,7 @@
 module.exports = {
   mode: 'jit',
   darkMode: 'class',
-  purge: ['./src/index.html', './src/app/**/*.component.html', './src/app/**/*.component.ts'],
-  content: [],
+  content: ['./src/index.html', './src/app/**/*.component.html', './src/app/**/*.component.ts'],
   theme: {
     extend: {
       colors: {
@@ -13,12 +12,8 @@ module.exports = {
         "cards": "#292c2e",
         "cards": "#292c2e",
         "light-cards": "#bcbcbc",
-        // 'bg':  withOpacity('--color-bg'),
-        // 'text': withOpacity('--color-text'),
       },
       screens: {
-        // 'tablet': '640px',
-        // 'laptop': '1024px',
         'desktop': '1280px',
         'phoneL': '550px',
         'phone': '375px',

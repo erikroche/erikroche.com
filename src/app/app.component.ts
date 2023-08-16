@@ -1,7 +1,6 @@
 import {Component, AfterViewInit } from '@angular/core';
 import {NavbarService} from './services/navbar.service';
 import {ThemeService} from "./services/theme.service";
-import { GoogleAnalyticsService } from './services/google-analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { GoogleAnalyticsService } from './services/google-analytics.service';
 })
 export class AppComponent implements AfterViewInit {
 
-  constructor(private navbarService: NavbarService, private themeService: ThemeService, public googleAnalyticsService: GoogleAnalyticsService) {}
+  constructor(private navbarService: NavbarService, private themeService: ThemeService) {}
 
   ngAfterViewInit(): void {
     this.navbarService.setMenuWithWidth();
