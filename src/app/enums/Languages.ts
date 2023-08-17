@@ -1,5 +1,5 @@
 export enum Languages {
-  JavasScript = 'JavaScript',
+  JavaScript = 'JavaScript',
   TypeScript = 'TypeScript',
   Java = 'Java',
   CSharp = 'C#',
@@ -36,4 +36,5 @@ export enum Languages {
   Docker = 'Docker',
   NodeJS = 'NodeJS',
   MongoDB = 'MongoDB',
+  Groovy = 'Groovy',
 }

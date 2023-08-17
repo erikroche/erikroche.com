@@ -18,42 +18,33 @@ export class WorkComponent implements OnInit{
   }
 
   public setProjects() {
-    const mineSweeper = new Project(
+    const erikrocheonline = new Project(
       1,
-      'MineSweeper',
-      'A small personal project, consisting of the creation of a minesweeper coded exclusively in JavaScript.',
-      [Languages.JavasScript, Languages.CSS, Languages.HTML],
-      'https://github.com/ZIRTR0X/MinesWeeper_JS',
-      'https://zirtr0x.github.io/MinesWeeper_JS/'
+      'erikroche.online',
+      'Taking the backend I built from an earlier project, I implemented a load balanced website built with Nginx and Docker with a simple CI/CD pipeline. Added an Angular and Typescript front-end',
+      [Languages.Docker, Languages.TypeScript, Languages.Angular, Languages.HTML],
+      'https://github.com/erikroche/erikroche.online',
     );
-    const connect4 = new Project(
-      3,
-      'Connect4',
-      'This project is a Connect4 game. It is a school project for the professional degree in mobile application, at the University of Clermont Auvergne.',
-      [Languages.SWIFT],
-      'https://github.com/ZIRTR0X/SWIFT-Connect4'
+    const gradlesqlvalidator = new Project(
+      2,
+      'Gradle SQL Validator',
+      'This was a tool I built during my Internship at Travelport. It was a Gradle plugin that would eliminate syntax errors in our team\'s SpringBoot Back-end. It was built using Java and Groovy.',
+      [Languages.Groovy, Languages.Java],
+      'https://github.com/erikroche/gradle-sql-validator',
     );
-    const portfolio = new Project(
-      4,
-      'Portfolio',
-      'This is this website. It is a personal project, which allows me to put forward my different projects whether they are academic or personal.',
-      [Languages.Angular, Languages.ThreeJS, Languages.TailwindCSS, Languages.TypeScript],
-      'https://github.com/ZIRTR0X/PersonalWebsite',
-      'https://julien-theme.dev/'
-    );
-    const fruitClassification = new Project(
+    const gpt4less = new Project(
       5,
-      'AI Fruit Classification',
-      'An AI made in python, which by giving it an image of a fruit, it will give us the name of this fruit. It\'s a school project made in second year of a two-year university diploma in computer science at UCA.',
-      [Languages.Python, Languages.Sklearn, Languages.Pandas, Languages.Numpy, Languages.OpenCV],
-      'https://github.com/ZIRTR0X/AI-Fruit-Classification'
+      'GPT 4 Less',
+      'A self-hosted alternative to OpenAI\'s GPT-3.5 and GPT-4. This allows anyone with an Open AI account to use the GPT-3.5/4 API without having to pay $20/month. It is built with Node.js and Express.',
+      [Languages.NodeJS, Languages.JavaScript, Languages.HTML],
+      'https://github.com/erikroche/gpt-4-less',
     );
-    const objectDetection = new Project(
+    const readmegenerator = new Project(
       6,
-      'Object Detection',
-      'Machine learning project make in an university diploma in computer science. It allows to recognize objects (pedestrians and vehicles) in an urban environment using different technologies.',
-      [Languages.Python, Languages.TenserFlow, Languages.Keras],
-      'https://github.com/ZIRTR0X/Project-Object-Detection'
+      'Readme Generator',
+      'A project I build over a weekend to help me generate README.md files for my projects. It is built with Python and uses the OpenAI API to generate the descriptions.',
+      [Languages.Python],
+      'https://github.com/erikroche/readme-generator',
     );
     const cinapp = new Project(
       7,
@@ -91,7 +82,7 @@ export class WorkComponent implements OnInit{
       'https://github.com/ZIRTR0X/MealGeniusAPI'
     );
     
-    this.projects.push(portfolio, MealGenius, MealGeniusAPI, mineSweeper, AverageCalculator, cinapp);
+    this.projects.push(erikrocheonline, gradlesqlvalidator, gpt4less, readmegenerator, );
   }
 
   public setLanguages() {
@@ -153,7 +144,7 @@ export class WorkComponent implements OnInit{
     );
     const javascript = new Language(
       8,
-      Languages.JavasScript,
+      Languages.JavaScript,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
       "I use JavaScript in most of my projects, both for work and personal.",
       LanguagesLevel.Advanced,

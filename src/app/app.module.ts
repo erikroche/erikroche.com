@@ -9,7 +9,6 @@ import {ContactComponent} from "./contact/contact.component";
 import {EarthComponent} from "./earth/earth.component";
 import {AngularSvgIconModule} from "angular-svg-icon";
 import {HttpClientModule} from "@angular/common/http";
-import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule} from 'ngx-google-analytics';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,6 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule} from 'ngx-goo
     RouterLink,
     AngularSvgIconModule.forRoot(),
     HttpClientModule,
-    NgxGoogleAnalyticsModule.forRoot('G-XCFJ5ZRZMV'),
-    NgxGoogleAnalyticsRouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
