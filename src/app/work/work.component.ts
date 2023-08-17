@@ -80,7 +80,7 @@ export class WorkComponent implements OnInit{
       9,
       'MealGenius',
       'MealGenius is a React Native mobile application that allows you to find meals based on the ingredients you have. You can also add recipes to your favorites and view them at any time.',
-      [Languages.ReactNative, Languages.Expo, Languages.Paper, Languages.API],
+      [Languages.React, Languages.Expo, Languages.Paper, Languages.API],
       'https://github.com/ZIRTR0X/MealGenius'
     );
     const MealGeniusAPI = new Project(
@@ -95,97 +95,90 @@ export class WorkComponent implements OnInit{
   }
 
   public setLanguages() {
-    const typescript = new Language(
+    const python = new Language(
       1,
-      Languages.TypeScript,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-      "I use it in my work-study projects, and in my personal projects.",
+      Languages.Python,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+      "Python is my preferred scripting language. I use it in a variety of projects, including machine learning and web scraping projects.",
       LanguagesLevel.Advanced
     );
-    const couchDB = new Language(
+    const java = new Language(
+      9,
+      Languages.Java,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+      "I use Java mainly to create efficient and robust backend apps, leveraging Spring and OOP principles for enhanced development.",
+      LanguagesLevel.Advanced,
+    );
+    const nodejs = new Language(
+      10,
+      Languages.NodeJS,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+      "I use NodeJS to create fullstack apps, utilising Express and Nginx to create scalable websites just like this one!",
+      LanguagesLevel.Intermediate,
+    );
+    const mySQL = new Language(
       2,
-      Languages.CouchDB,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/couchdb/couchdb-original.svg',
-      "I use it in my work-study projects.",
-      LanguagesLevel.Advanced
-    );
-    const ionic = new Language(
-      3,
-      Languages.Ionic,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg',
-      "I use it in my work-study projects.",
-      LanguagesLevel.Advanced
-    );
-    const angular = new Language(
-      4,
-      Languages.Angular,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
-      "I use it in my work-study projects, and in my personal projects.",
-      LanguagesLevel.Advanced
-    );
-    const swift = new Language(
-      11,
-      Languages.SWIFT,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
-      "I use it in my school projects.",
+      Languages.MySQL,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+      "Experienced in designing and managing MySQL databases within Docker containers to ensure scalable data storage solutions.",
       LanguagesLevel.Intermediate
     );
     const git = new Language(
       5,
       Languages.Git,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-      "I use it in my personal projects, school projects and my work-study projects.",
+      "I use Git almost everday for managing my personal projects. I also used it in my internship.",
       LanguagesLevel.Advanced
+    );
+    const React = new Language(
+      13,
+      Languages.React,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      "Skilled in developing responsive web applications using React. Mostly used this during my internship.",
+      LanguagesLevel.Intermediate
+    );
+    const angular = new Language(
+      4,
+      Languages.Angular,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
+      "I picked this up due to it's popularity and ease of use. I use it for this very website.",
+      LanguagesLevel.Novice
+    );
+    const docker = new Language(
+      11,
+      Languages.Docker,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+      "I have used docker in both personal and professional projects. I use it to containerize and scale my applications.",
+      LanguagesLevel.Intermediate
+    );
+    const javascript = new Language(
+      8,
+      Languages.JavasScript,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+      "I use JavaScript in most of my projects, both for work and personal.",
+      LanguagesLevel.Advanced,
+    );
+    const MongoDB = new Language(
+      6,
+      Languages.MongoDB,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+      "I have been experiementing with MongoDB for a while now. I use it in my personal projects.",
+      LanguagesLevel.Beginner,
     );
     const html = new Language(
       6,
       Languages.HTML,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-      "I use js in most of my projects.",
+      "I use HTML in most of my projects.",
       LanguagesLevel.Advanced,
     );
     const css = new Language(
       7,
       Languages.CSS,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-      "I use js in most of my projects.",
+      "I use CSS in most of my projects.",
       LanguagesLevel.Intermediate,
     );
-    const javascript = new Language(
-      8,
-      Languages.JavasScript,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-      "I use js in most of my projects.",
-      LanguagesLevel.Advanced,
-    );
-    const java = new Language(
-      9,
-      Languages.Java,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-      "I use it especially for school projects.",
-      LanguagesLevel.Advanced,
-    );
-    const csharp = new Language(
-      10,
-      Languages.CSharp,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
-      "I use it especially for school projects.",
-      LanguagesLevel.Intermediate,
-    );
-    const threeJS = new Language(
-      12,
-      Languages.ThreeJS,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg',
-      "I use it in my personal projects.",
-      LanguagesLevel.Beginner
-    );
-    const ReactNative = new Language(
-      13,
-      Languages.ReactNative,
-      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-      "I use it in my personal and school projects.",
-      LanguagesLevel.Intermediate
-    );
-    this.languages.push(typescript, couchDB, ionic, angular, swift, threeJS, ReactNative, java, csharp, git, html, css);
+    this.languages.push(python, java, nodejs, mySQL, git, React, angular, docker, MongoDB, javascript, html, css);
   }
 }
