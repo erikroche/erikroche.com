@@ -6,12 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'mainPurple': '#682BD7',
-        'secondaryPurple': '#8d54f7',
-        'dark': '#181a1b',
+        'mainPurple': '#635bf6',
+        'secondaryPurple': '#635bf6',
+        'dark': '#181818',
         "cards": "#292c2e",
         "cards": "#292c2e",
-        "light-cards": "#bcbcbc",
+        "light-cards": "#efefed",
       },
       screens: {
         'desktop': '1280px',
