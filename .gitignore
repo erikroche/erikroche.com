@@ -1,5 +1,9 @@
 # Node
 /node_modules
 
-# Miscellaneous
+# Angular
+/dist
 /.angular/cache
+
+# Git
+/.DS_Store
