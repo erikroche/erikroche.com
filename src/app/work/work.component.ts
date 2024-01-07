@@ -18,6 +18,14 @@ export class WorkComponent implements OnInit{
   }
 
   public setProjects() {
+    const apiresume = new Project(
+      3,
+      'API Resume ↗️',
+      'This is a REST API I built using Next.js. It is a simple API that contains a connection to a PostgreSQL database on Supabase. It is hosted on Vercel.',
+      [Languages.NextJS, Languages.JavaScript, Languages.PostgreSQL],
+      'https://github.com/erikroche/api-resume',
+      'https://erik-roche-api-resume.vercel.app/'
+    );
     const erikrocheonline = new Project(
       1,
       'erikroche.online',
@@ -46,43 +54,8 @@ export class WorkComponent implements OnInit{
       [Languages.Python],
       'https://github.com/erikroche/readme-generator',
     );
-    const cinapp = new Project(
-      7,
-      'CineApp',
-      'CineApp is an Android application project dedicated to movie lovers. It allows users to view information about recent and popular movies, add them to their favourites list and rate them.',
-      [Languages.AndroidStudio, Languages.Kotlin, Languages.API],
-      'https://github.com/ZIRTR0X/Cinapp'
-    );
-    const tarotScoreur = new Project(
-      8,
-      'Tarot Scoreur',
-      'The Tarot Scoreur application allows during your tarot games to automatically count the points of all the players in the game. With this application you can play online with your friend or play locally at your home !',
-      [Languages.CSharp, Languages.API],
-      'https://github.com/ZIRTR0X/TarotScoreur'
-    );
-    const AverageCalculator = new Project(
-      9,
-      'Average calculator',
-      'This project is an average calculator for students allowing to calculate their average according to the coefficients of each Teaching Units and the marks obtained in each course.',
-      [Languages.SWIFT],
-      'https://github.com/ZIRTR0X/AverageCalculator'
-    );
-    const MealGenius = new Project(
-      9,
-      'MealGenius',
-      'MealGenius is a React Native mobile application that allows you to find meals based on the ingredients you have. You can also add recipes to your favorites and view them at any time.',
-      [Languages.React, Languages.Expo, Languages.Paper, Languages.API],
-      'https://github.com/ZIRTR0X/MealGenius'
-    );
-    const MealGeniusAPI = new Project(
-      9,
-      'MealGenius API',
-      'This is the MealGenius App API. It is a REST API made with Quarkus and MongoDB.',
-      [Languages.Java, Languages.Quarkus, Languages.MangoDB],
-      'https://github.com/ZIRTR0X/MealGeniusAPI'
-    );
     
-    this.projects.push(erikrocheonline, gradlesqlvalidator, gpt4less, readmegenerator, );
+    this.projects.push(apiresume, erikrocheonline, gradlesqlvalidator, gpt4less, readmegenerator, );
   }
 
   public setLanguages() {
@@ -90,14 +63,14 @@ export class WorkComponent implements OnInit{
       1,
       Languages.Python,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-      "Python is my preferred scripting language. I use it in a variety of projects, including machine learning and web scraping projects.",
+      "Python is my preferred language. I use it in a variety of projects, including machine learning and web scraping projects.",
       LanguagesLevel.Advanced
     );
     const java = new Language(
       9,
       Languages.Java,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-      "I use Java mainly to create efficient and robust backend apps, leveraging Spring and OOP principles for enhanced development.",
+      "I use Java mainly to create efficient and robust backend apps. I used it in my internship.",
       LanguagesLevel.Advanced,
     );
     const nodejs = new Language(
@@ -132,7 +105,7 @@ export class WorkComponent implements OnInit{
       4,
       Languages.Angular,
       'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
-      "I picked this up due to it's popularity and ease of use. I use it for this very website.",
+      "I picked this up due to it's popularity and ease of use. I used it for this very website.",
       LanguagesLevel.Novice
     );
     const docker = new Language(
@@ -170,6 +143,13 @@ export class WorkComponent implements OnInit{
       "I use CSS in most of my projects.",
       LanguagesLevel.Intermediate,
     );
-    this.languages.push(python, java, nodejs, mySQL, git, React, angular, docker, MongoDB, javascript, html, css);
+    const cSharp = new Language(
+      3,
+      Languages.CSharp,
+      'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
+      "I received a certificate in foundations of C# from Microsoft.",
+      LanguagesLevel.Intermediate,
+    );
+    this.languages.push(python, java, javascript, cSharp, mySQL, git, React, angular, docker, MongoDB, html, css);
   }
 }

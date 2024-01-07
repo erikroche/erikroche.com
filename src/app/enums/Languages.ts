@@ -37,4 +37,6 @@ export enum Languages {
   NodeJS = 'NodeJS',
   MongoDB = 'MongoDB',
   Groovy = 'Groovy',
+  NextJS = 'NextJS',
+  PostgreSQL = 'PostgreSQL',
 }

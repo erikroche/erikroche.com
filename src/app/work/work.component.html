@@ -6,7 +6,12 @@
           <div *ngFor="let project of projects" class="h-52 w-80 dark:bg-cards bg-light-cards rounded-lg my-5 mx-5 transition-transform transform-gpu hover:scale-110">
             <div class="mr-3 ml-3 mt-2">
               <div class="flex justify-between mt-4 h-10 rounded-full">
-                <p class="mb-2 font-semibold">{{ project.title }}</p>
+                <p class="mb-2 font-semibold">
+                  <ng-container *ngIf="project.websiteLink; else plainTitle">
+                    <a [href]="project.websiteLink" target="_blank">{{ project.title }}</a>
+                  </ng-container>
+                  <ng-template #plainTitle>{{ project.title }}</ng-template>
+                </p>
                 <div class="flex justify-end">
                   <ng-container *ngIf="project.githubLink">
                     <a [href]="project.githubLink">
