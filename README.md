@@ -1,4 +1,4 @@
-# erikroche.online
+# erikroche.com
 
 This is my personal website written with Angular.js, Typescript, HTML and Tailwind CSS. It showcases my personal projects as well as skills and languages I have learnt. I have deployed this website using Netlify.
 
